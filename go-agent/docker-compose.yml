@@ -1,4 +1,2 @@
 goAgent:
-  image: "gocd/gocd-agent:latest"
-  external_links:
-  - "go-server:go-server"
+  image: "gocd-agent-java8"

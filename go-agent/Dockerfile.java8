@@ -1,0 +1,11 @@
+# Build using: docker build -f Dockerfile.java8 -t gocd-agent-java8 .
+FROM gocd/gocd-agent:latest
+MAINTAINER Matthias Balke <matthias.balke@googlemail.com>
+
+RUN sudo add-apt-repository ppa:openjdk-r/ppa
+RUN sudo apt-get update
+RUN sudo apt-get install -y openjdk-8-jdk
+RUN sudo apt-get purge -y openjdk-7-jre-headless
+
+# from gocd/go-cd-agent
+CMD ["/sbin/my_init"]
